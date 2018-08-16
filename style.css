@@ -1,0 +1,99 @@
+/* WHAT IS FLEXBOX?
+A CSS3 layout mode that provides an easy and 
+clean way to arrange items within a container
+
+-NO FLOATS!
+-Responsive and mobile friendly
+-Positioning child elements is MUCH easier
+-Flex container's margins do not collapse with
+the margins of its contents.
+-Order of elements can easily be changed without 
+editing the source HTML.
+-also called a flexible box model
+
+FLEXIBLE BOX MODEL CONCEPT
+
+-The ability to alter item width and height to 
+best fir its containers available free space
+-Flexbox is direction-agnostic
+-Built for small-scale layouts while the 
+upcoming "Grid" specification is for more
+large scale
+
+MAIN FLEX PROPOERTIES
+
+display: flex | inline-flex
+flex-direction: row | column
+flex-wrap: wrap | nowrap | wrapreverse
+flex-basis: <length>
+justify-content: flex-start | flex-end | center
+align-self: flex-start | flex-end | center
+align-items: flex-start | flex-end | center
+align-content: flex-start | flex-end | center
+flex-grow: <number>
+flex-shrink: <number>
+flex: <integer>
+order: <integer>*/
+
+.container-3{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.container-1 div, .container-2 div, .container-3 div{
+	border: 1px #cccccc solid;
+	padding: 10px;
+	margin-bottom: 5px;
+}
+
+.box-1{
+	flex: 2;
+	order: 2;
+}
+
+.box-2{
+	flex: 1;
+	order: 1;
+}
+
+.box-3{
+	flex: 1;
+	order: 3;
+}
+
+.container-2-box{
+	/* width: 27%; 
+	width is ok but 
+	flex-basis is more flexbox way to to this*/
+	flex-basis: 27%;
+}
+
+.container-3-box{
+	flex-basis: 12%;
+}
+
+@media(min-width:768px){
+	.container-1{
+		display: flex;
+		/*display: inline-flex;
+		align-items: flex-end;
+		align-items: center;
+		align-items: flex-start;
+		by default alight-items: stretch
+		flex-direction: column;
+		by default flex-direction: row;*/
+
+	}
+
+	.container-2{
+		display: flex;
+		/*by default justify-content: flex-start;
+		justify-content: flex-end;
+		justify-content: center;
+		justify-content: space-around;
+		*/
+		justify-content: space-between;
+	}
+
+}
